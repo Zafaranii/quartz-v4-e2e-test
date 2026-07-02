@@ -3,10 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - my-quartz-v4
+      - main
   pull_request:
     branches:
-      - my-quartz-v4
+      - main
   workflow_dispatch:
 
 permissions:
@@ -49,7 +49,7 @@ jobs:
           path: public
 
   deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/my-quartz-v4'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     name: Deploy to GitHub Pages
